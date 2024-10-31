@@ -1,0 +1,179 @@
+
+
+  <!-- Breadcumb Section Start -->
+  <div class="breadcrumb-wrapper" style="padding: 0px 0 !important">
+      <div class="book1">
+          <!-- <img src="assets/img/hero/book1.png" alt="book">
+      </div>
+      <div class="book2">
+          <img src="assets/img/hero/book2.png" alt="book">
+      </div> -->
+      <div class="container">
+          <div class="page-heading">
+              <h1>Contáctanos</h1>
+              <div class="page-header">
+                  <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
+                      <li>
+                          <a href="index.html">
+                              Inicio
+                          </a>
+                      </li>
+                      <li>
+                          <i class="fa-solid fa-chevron-right"></i>
+                      </li>
+                      <li>
+                          Contáctanos
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Contact Section Start -->
+  <section class="contact-section fix section-padding">
+      <div class="container">
+          <div class="contact-wrapper">
+              <div class="row g-4 align-items-center">
+                  <div class="col-lg-4">
+                      <div class="contact-left-items">
+                          <div class="contact-info-area-2">
+                              <div class="contact-info-items mb-4">
+                                  <div class="icon">
+                                      <i class="icon-icon-10"></i>
+                                  </div>
+                                  <div class="content">
+                                      <p>Whatsapp 24 hrs.</p>
+                                      <h3>
+                                          <a href="https://wa.me/51906681820">+51 - 906 681 820</a>
+                                      </h3>
+                                  </div>
+                              </div>
+                              <div class="contact-info-items mb-4">
+                                  <div class="icon">
+                                      <i class="icon-icon-11"></i>
+                                  </div>
+                                  <div class="content">
+                                      <p>Solicite cotización</p>
+                                      <h3>
+                                          <a>ventas&#64;mho.digital</a>
+                                      </h3>
+                                  </div>
+                              </div>
+                              <div class="contact-info-items border-none">
+                                  <div class="icon">
+                                      <i class="icon-icon-12"></i>
+                                  </div>
+                                  <div class="content">
+                                      <p>Nuestra Dirección</p>
+                                      <h3>
+                                        Av. Club Golf Los Inkas, Santiago de Surco Lima, Perú.
+                                      </h3>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- <div class="video-image">
+                              <img src="assets/img/contact.jpg" alt="img">
+                              <div class="video-box">
+                                  <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I"
+                                      class="video-btn ripple video-popup">
+                                      <i class="fa-solid fa-play"></i>
+                                  </a>
+                              </div>
+                          </div> -->
+                      </div>
+                  </div>
+                  <div class="col-lg-8">
+                      <div class="contact-content">
+                          <h2>Bienvenida a Nuestra Librería Mayorista</h2>
+                          <p>
+                            ¡Bienvenidos a la Librería Mayorista de MHO DIGITAL EIRL, su aliado confiable en el mundo literario! Como una empresa legalmente constituida en Perú, con RUC 20612507784, operamos desde Lima para ofrecerle un servicio profesional y seguro. Nos especializamos en la distribución de libros con registro ISBN-13, asegurando autenticidad y calidad. Disfrute de entregas rápidas en un máximo de 10 días hábiles, con envío sin costo.
+                          </p>
+                          <br>
+
+
+                            <!-- Mensajes de Éxito/Error -->
+
+                            <div *ngIf="mensajeExito" class="alert alert-success">
+                              {{ mensajeExito }}
+                            </div>
+                            <div *ngIf="mensajeError" class="alert alert-danger">
+                              {{ mensajeError }}
+                            </div>
+                            <br>
+
+                            <h3>Solicita cotización</h3>
+                            <br>
+
+
+
+                            <!-- Formulario de Contacto -->
+
+                          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contact-form" class="contact-form-items">
+                              <div class="row g-4">
+                                  <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                                      <div class="form-clt">
+                                          <span>Nombre completo o Razón Social</span>
+                                          <input type="text" formControlName="name" placeholder="Su nombre completo o razón social">
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="form-clt">
+                                        <span>RUC / DNI / CE</span>
+                                        <input type="text" formControlName="dni_ruc" id="dni_ruc" placeholder="RUC/DNI/CE">
+                                    </div>
+                                </div>
+                                  <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                                      <div class="form-clt">
+                                          <span>Email</span>
+                                          <input type="text" formControlName="email" placeholder="Su Email">
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
+                                      <div class="form-clt">
+                                          <span>Mensaje</span>
+                                          <textarea formControlName="message"
+                                              placeholder="Escriba mensaje"></textarea>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
+                                      <button type="submit" class="theme-btn">
+                                          Enviar mensaje <i class="fa-solid fa-arrow-right-long"></i>
+                                      </button>
+                                  </div>
+                              </div>
+                          </form>
+                          <br>
+                          <br>
+
+                          <h3>Pasos para proceder con el registro de Cliente y proceder con la compra</h3>
+                          <br>
+
+                            <ol>
+                              <li>Selección de Libros: Explore nuestro catálogo y elija los títulos que impulsen su negocio. Para calificar como cliente mayorista, realice una compra mínima de 10 libros de cualquiera de nuestras opciones disponibles.</li>
+                              <li>Documentación: Envíe una copia de su DNI o RUC para establecer su perfil comercial y garantizar nuestra relación de negocios.</li>
+                              <li>Información de Contacto: Detalle su persona de contacto proporcionando nombre, correo electrónico, número de teléfono y dirección para facilitar la comunicación y entrega.</li>
+                              <li>Logística de Envío: Para clientes en provincias, indíquenos su agencia de transporte preferida para asegurar una entrega eficiente y segura en su localidad.</li>
+
+                            </ol>
+                            <p>
+                              Al suscribirse y enviar sus datos, será considerado cliente mayorista y comenzará a recibir ofertas exclusivas y precios competitivos, diseñados para potenciar su negocio de venta de libros. Estamos comprometidos a proporcionarle un servicio de excelencia que catalice su crecimiento comercial. ¡Esperamos con interés trabajar juntos!
+                            </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!--<< Map Section Start >>-->
+  <!-- <div class="map-section">
+      <div class="map-items">
+          <div class="googpemap">
+              <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6678.7619084840835!2d144.9618311901502!3d-37.81450084255415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b4758afc1d%3A0x3119cc820fdfc62e!2sEnvato!5e0!3m2!1sen!2sbd!4v1641984054261!5m2!1sen!2sbd"
+                  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+      </div>
+  </div> -->
+
