@@ -129,12 +129,30 @@ export class ListfilterComponent implements OnInit {
       .subscribe({
         next: (lst: any) => {
           this.lstProducto = lst;
+          // Cargar los precios con descuento para cada producto
+          this.lstProducto.forEach((producto) => this.obtenerDescuento(producto));
         },
         error: (error: any) => {
           console.error('Error fetching nuevos títulos', error);
         },
       });
   }
+  obtenerDescuento(producto: any) {
+    if (producto.id) {
+      this.lecturaService.getdiscountPriceMayorista(producto.id).subscribe({
+        next: (res: any) => {
+          producto.precioDesc = res.precio_con_descuento;
+          producto.percentajeDesc = res.percentaje_descuento;
+          console.log(`Precio con descuento para ${producto.id}:`, res.precio_con_descuento);
+        },
+        error: (err) => {
+          console.error(`Error fetching discount price for ${producto.id}:`, err);
+        }
+      });
+    }
+  }
+
+
   listadocategoria(ibic: string, categoria: string) {
     this.dtltipo = ibic;
     this.txtsearchtitulo = '';
@@ -151,6 +169,11 @@ export class ListfilterComponent implements OnInit {
         next: (dtl: any) => {
           console.log('listadocategoria' + this.dtltipo);
           this.lstProducto = dtl;
+
+          // Asegúrate de obtener los descuentos para los productos de la categoría
+          this.lstProducto.forEach((producto) => this.obtenerDescuento(producto));
+
+
         },
         error: () => {},
       });
@@ -183,6 +206,10 @@ export class ListfilterComponent implements OnInit {
       .subscribe({
         next: (dtl: any) => {
           this.lstProducto = dtl;
+
+          // Asegúrate de obtener los descuentos para los productos
+          this.lstProducto.forEach((producto) => this.obtenerDescuento(producto));
+
         },
         error: () => {},
       });

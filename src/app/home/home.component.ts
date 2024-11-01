@@ -155,6 +155,11 @@ export class HomeComponent implements OnInit {
       .subscribe({
         next: (lst: any) => {
           this.products = lst;
+
+          // Iterar sobre los productos para obtener precios con descuento
+          this.products.forEach((product) => this.obtenerDescuento(product));
+
+
         },
         error: (error: any) => {
           console.error('Error fetching products', error);
@@ -165,6 +170,21 @@ export class HomeComponent implements OnInit {
       });
 
     this.loadProductsForCategories();
+  }
+
+  obtenerDescuento(product: any) {
+    if (product.id) {
+      this.lecturaService.getdiscountPriceMayorista(product.id).subscribe({
+        next: (res: any) => {
+          product.precioDesc = res.precio_con_descuento;
+          product.percentajeDesc = res.percentaje_descuento;
+          console.log(`Precio con descuento para ${product.id}:`, res.precio_con_descuento);
+        },
+        error: (err) => {
+          console.error(`Error fetching discount price for ${product.id}:`, err);
+        },
+      });
+    }
   }
 
   loadProductsForCategories() {
@@ -181,6 +201,10 @@ export class HomeComponent implements OnInit {
             //console.log(`Data for ${category.nombre_clasificacion}:`, response);
             if (Array.isArray(response)) {
               category.productos = response.slice(0, 5); // Muestra los primeros 5 productos
+
+              // Cargar precios con descuento para los productos de la categoría
+              category.productos.forEach((producto) => this.obtenerDescuento(producto));
+
             } else {
               console.warn(
                 `Unexpected response structure for category ${category.codigo_ibic}`

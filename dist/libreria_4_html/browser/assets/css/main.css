@@ -8223,6 +8223,41 @@ ul > li:hover .submenu {
 
 }
 
+.detalle-precio-mercado{
+  font-size: 12px; /* Tamaño de fuente pequeño para el SKU */
+  color: #666; /* Color del texto */
+  margin: 0 !important; /* Eliminar margen si es necesario */
+  padding: 0 !important; /* Eliminar padding si es necesario */
+  line-height: 1.5 !important; /* Interlineado mínimo */
+  margin-top: 20px !important;
+  font-style: italic; /* Aplicar estilo itálica */
+}
+
+.detalle-precio-mercado-tachado{
+  font-size: 14px; /* Tamaño de fuente pequeño para el SKU */
+  color: #666; /* Color del texto */
+  margin: 0 !important; /* Eliminar margen si es necesario */
+  padding: 0 !important; /* Eliminar padding si es necesario */
+  line-height: 1.5 !important; /* Interlineado mínimo */
+  margin-top: 0px !important;
+  font-style: italic; /* Aplicar estilo itálica */
+  text-decoration: line-through !important;
+}
+.detalle-precio-distribuidor{
+  font-size: 14px; /* Tamaño de fuente pequeño para el SKU */
+  color: var(--theme2) !important; /* Color del texto */
+  margin: 0 !important; /* Eliminar margen si es necesario */
+  padding: 0 !important; /* Eliminar padding si es necesario */
+  line-height: 1 !important; /* Interlineado mínimo */
+  margin-top: 10px !important;
+  margin-bottom: 0px !important;
+
+  font-style: normal; /* Aplicar estilo itálica */
+}
+
+
+
+
 .disponible {
   color: green !important; /* Color verde para "Disponible" */
   font-weight: bold;
@@ -8393,4 +8428,19 @@ ul > li:hover .submenu {
   margin-top: 10px;
 }
 
+/* Precio desccuento */
 
+.price-discount {
+  color: orange;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* precio original */
+
+price-original {
+  color: #555;
+  text-decoration: line-through !important;
+  font-size: 18px;
+}

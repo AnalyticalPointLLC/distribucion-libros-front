@@ -19,6 +19,8 @@ export class LecturaService {
 
   private sendEmailContactoMayorista = '/bmg_books/send_email';
 
+  private discountPriceMayorista = '/bmg_books/discounted_price';
+
 
   private nombreCategoriaSource = new BehaviorSubject<string>(''); // Valor inicial
   currentNombreCategoria = this.nombreCategoriaSource.asObservable();
@@ -126,4 +128,20 @@ export class LecturaService {
       this.sendEmailContactoMayorista,
       emailData);
   }
+
+  getdiscountPriceMayorista(
+    book_id: number
+
+  ): Observable<any> {
+    // Nuevo método
+    return this.http.get(
+      this.baseUrl +
+        this.discountPriceMayorista +
+        '/' +
+        book_id
+    );
+  }
+
+
+
 }

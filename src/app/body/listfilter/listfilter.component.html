@@ -174,36 +174,55 @@
                                         </h3>
                                         <p class="isbn">ISBN-13: {{item.isbn13}}</p>
                                         <p class="isbn">IBIC: {{item.clasificacion}}</p>
+                                        <p class="isbn">No. Páginas: {{item.paginas}}</p>
+
                                         <p class="detalle">Idioma: {{item.idioma_edicion}}</p>
                                         <p class="detalle">Promoción: {{item.promocion}}</p>
-                                        <ul class="price-list">
-                                            <li>S./ {{item.pvp}}</li>
 
 
-                                            <li
-                                                [ngClass]="{'disponible': item.tipo_notificacion === 'A', 'no-disponible': item.tipo_notificacion === 'B'}">
-                                                {{ item.tipo_notificacion === 'A' ? 'Título Disponible' : 'No Disponible'
-                                                }}
-                                            </li>
+                                        <p class="detalle-precio-mercado">PRECIO:</p>
 
-                                            <!-- <li>
-                                                <i class="fa-solid fa-star"></i>
-                                                3.4 (25)
-                                            </li> -->
+
+
+                                        <ul>
+                                          <p class="detalle-precio-mercado-tachado">S/. {{ item.pvp }}</p>
+
+                                          <!-- Nuevo bloque para mostrar el precio y porcentaje con descuento -->
 
                                         </ul>
 
                                         <ul>
+                                          <p class="detalle-precio-distribuidor" >PRECIO DISTRIBUIDOR:</p>
+
+                                        </ul>
+
+                                        <ul class="price-list">
+                                          <li *ngIf="item.precioDesc">S/. {{ item.precioDesc }} </li>
+                                          <li style="color: white; background-color:var(--theme2); font-size:80%" *ngIf="item.percentajeDesc"> {{ item.percentajeDesc }}% Descuento</li>
+                                        </ul>
+
+                                        <ul>
+                                          <li style="color: blue; margin-top: 5px;">Compra Mínimo 10 unidades</li>
+                                        </ul>
+
+                                        <ul style="margin-top: 5px;" class="detalle">
                                           <li
                                           [ngClass]="{'printdemand': item.formato === 'P', 'no-printdemand': item.formato === 'S'}">
-                                          {{ item.formato === 'P' ? 'Entrega: 10 días' : 'Título no disponible'
+                                          {{ item.tipo_notificacion === 'A' ? 'Entrega: 10 días' : 'Título no disponible'
                                           }}
                                           </li>
                                         </ul>
 
+                                        <p class="detalle">Envío Grátis todo el Perú </p>
 
 
-
+                                        <ul style="margin-top: 5px;">
+                                          <li
+                                          [ngClass]="{'disponible': item.tipo_notificacion === 'A', 'no-disponible': item.tipo_notificacion === 'B'}">
+                                          {{ item.tipo_notificacion === 'A' ? 'Título Disponible' : 'No Disponible'
+                                          }}
+                                          </li>
+                                        </ul>
 
                                         <div class="shop-button">
                                             <a href="shop-details.html" class="theme-btn"><i

@@ -119,22 +119,49 @@
                         <p>
                             {{dtldescripcion}}
                         </p>
-                        <div class="price-list">
-                            <h3>S./ {{dtlprecio}}</h3>
-                        </div>
+                        <p class="detalle-precio-mercado" style="font-size: 16px;">PRECIO:</p>
 
-                        <ul>
-                          <li [ngClass]="{'disponible': dttiponotificacion === 'A', 'no-disponible': dttiponotificacion === 'B'}">
-                            {{ dttiponotificacion === 'A' ? 'Título Disponible' : 'No Disponible' }}
-                          </li>
-                         </ul>
-                        <ul>
-                          <li
-                          [ngClass]="{'printdemand': dtlformato === 'P', 'no-printdemand': dtlformato === 'S'}">
-                          {{ dtlformato === 'P' ? 'Entrega: 10 días' : 'Título no disponible'
-                          }}
-                          </li>
-                        </ul>
+
+
+                          <ul>
+                            <p class="detalle-precio-mercado-tachado" style="font-size: 18px;">S/. {{ dtlprecio }}</p>
+
+                            <!-- Nuevo bloque para mostrar el precio y porcentaje con descuento -->
+
+                          </ul>
+
+                          <ul>
+                            <p class="detalle-precio-distribuidor" style="font-size: 22px;">PRECIO DISTRIBUIDOR:</p>
+
+                          </ul>
+
+                          <ul class="price-list">
+                            <li *ngIf="dtlprecioDesc" class="detalle-precio-distribuidor" style="font-size: 26px;" >S/. {{ dtlprecioDesc }} </li>
+                            <li style="color: white; background-color:var(--theme2); font-size:100%; margin-top: 10px" *ngIf="porcentajeDescuento"> {{ porcentajeDescuento }}% Descuento</li>
+                          </ul>
+
+                          <ul>
+                            <li style="color: blue; margin-top: 5px; font-size: 20px">Compra Mínimo 10 unidades</li>
+                          </ul>
+
+                          <ul style="margin-top: 5px; font-size: 16px" class="detalle">
+                            <li
+                            [ngClass]="{'printdemand': dtlformato === 'P', 'no-printdemand': dtlformato === 'S'}">
+                            {{ dttiponotificacion === 'A' ? 'Entrega: 10 días' : 'Título no disponible'
+                            }}
+                            </li>
+                          </ul>
+
+                          <p class="detalle" style="font-size: 16px">Envío Grátis todo el Perú </p>
+
+
+                          <ul style="margin-top: 5px; font-size: 20px">
+                            <li
+                            [ngClass]="{'disponible': dttiponotificacion === 'A', 'no-disponible': dttiponotificacion === 'B'}">
+                            {{ dttiponotificacion === 'A' ? 'Título Disponible' : 'No Disponible'
+                            }}
+                            </li>
+                          </ul>
                         <div class="cart-wrapper">
                             <div class="quantity-basket">
                                 <p class="qty">

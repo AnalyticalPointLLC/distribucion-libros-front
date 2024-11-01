@@ -17,6 +17,10 @@ export class DetailbookComponent {
   public dtltitulo: string = '';
   public dtldescripcion: string = '';
   public dtlprecio: string = '';
+  public dtlprecioDesc: string = ''; // Nuevo campo para el precio con descuento
+  public porcentajeDescuento: string = '';  // Nueva propiedad para el porcentaje de descuento
+
+
   public dtlsku: string = '';
   public dtltags: string = '';
   public dtlpagina: string = '';
@@ -49,8 +53,11 @@ export class DetailbookComponent {
     this.route.params.subscribe((params) => {
       this.dtlid = params['id']; // Access th
       this.voidListarPromoall();
+
     });
   }
+
+
 
   voidListarPromoall() {
     this.lecturaService.getbmgbookid(this.dtlid).subscribe({
@@ -79,16 +86,39 @@ export class DetailbookComponent {
         this.dttiponotificacion = lst.tipo_notificacion;
         this.dtisbn13 = lst.isbn13;
 
+        // Llamada para obtener el precio con descuento
+        this.obtenerDescuento();
+
       },
       error: (err) => {
         console.error('Error fetching book details:', err);
       }
     });
   }
+
+  obtenerDescuento() {
+    this.lecturaService.getdiscountPriceMayorista(Number(this.dtlid)).subscribe({
+      next: (res: any) => {
+        this.dtlprecioDesc = res.precio_con_descuento.toString();
+        this.porcentajeDescuento = res.percentaje_descuento.toString();
+        console.log('Precio con descuento obtenido:', res.precio_con_descuento);
+        console.log('Porcentaje de descuento obtenido:', res.percentaje_descuento);
+
+      },
+      error: (err) => {
+        console.error('Error fetching discount price:', err);
+      }
+    });
+  }
+
+
+
   limpiarInfo() {
     this.dtltitulo = '';
     this.dtldescripcion = '';
     this.dtlprecio = '';
+    this.dtlprecioDesc = ''; // Reinicia el valor de descuento también
+
     this.dtlsku = '';
     this.dtltags = '';
     this.dtlpagina = '';
