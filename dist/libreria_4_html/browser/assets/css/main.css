@@ -5118,6 +5118,7 @@ span {
 .shop-box-items.style-2 .shop-content .price-list del {
   color: #5C707E;
   font-weight: 500;
+
 }
 .shop-box-items.style-2 .shop-content h5 {
   color: var(--text);
@@ -5668,9 +5669,10 @@ span {
   margin-top: 8px;
 }
 .shop-box-items .shop-content .price-list li {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--theme2);
+
 }
 .shop-box-items .shop-content .price-list li del {
   font-weight: 500;
@@ -5740,9 +5742,10 @@ span {
   color: var(--theme);
   margin-bottom: 10px;
 }
+
 .shop-box-items.style-2 .shop-content .price-list {
   display: flex;
-  margin-top: 10px;
+  margin-top: 2px;
   justify-content: start;
   gap: 10px;
 }
@@ -8230,11 +8233,11 @@ ul > li:hover .submenu {
   padding: 0 !important; /* Eliminar padding si es necesario */
   line-height: 1.5 !important; /* Interlineado mínimo */
   margin-top: 20px !important;
-  font-style: italic; /* Aplicar estilo itálica */
+  font-style: normal; /* Aplicar estilo itálica */
 }
 
 .detalle-precio-mercado-tachado{
-  font-size: 14px; /* Tamaño de fuente pequeño para el SKU */
+  font-size: 12px; /* Tamaño de fuente pequeño para el SKU */
   color: #666; /* Color del texto */
   margin: 0 !important; /* Eliminar margen si es necesario */
   padding: 0 !important; /* Eliminar padding si es necesario */

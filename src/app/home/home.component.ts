@@ -178,6 +178,10 @@ export class HomeComponent implements OnInit {
         next: (res: any) => {
           product.precioDesc = res.precio_con_descuento;
           product.percentajeDesc = res.percentaje_descuento;
+          product.precioDesc_100 = res.precio_con_descuento_100;
+          product.percentajeDesc_100 = res.percentaje_descuento_100;
+          product.precioDesc_1000 = res.precio_con_descuento_1000;
+          product.percentajeDesc_1000 = res.percentaje_descuento_1000;
           console.log(`Precio con descuento para ${product.id}:`, res.precio_con_descuento);
         },
         error: (err) => {
