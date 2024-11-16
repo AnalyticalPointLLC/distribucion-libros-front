@@ -5666,7 +5666,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: 2px;
 }
 .shop-box-items .shop-content .price-list li {
   font-size: 14px;
@@ -8446,4 +8446,11 @@ price-original {
   color: #555;
   text-decoration: line-through !important;
   font-size: 18px;
+}
+
+
+.price-list-vertical {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important; /* Ajusta el espacio entre los elementos según necesites */
 }

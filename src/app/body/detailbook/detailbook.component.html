@@ -116,35 +116,82 @@
                             <a href="shop-details.html"><i class="fa-regular fa-star"></i></a>
                             <span>(1 Revisión Clientes)</span>
                         </div>
+
+                        <div class="shop-content">
                         <p>
                             {{dtldescripcion}}
                         </p>
-                        <p class="detalle-precio-mercado" style="font-size: 16px;">PRECIO:</p>
+
+                        <p class="detalle-precio-mercado" style="font-size: 22px; font-weight: bold; color: var(--theme)">PRECIO NORMAL:</p>
 
 
 
                           <ul>
-                            <p class="detalle-precio-mercado-tachado" style="font-size: 18px;">S/. {{ dtlprecio }}</p>
-
+                            <p class="detalle-precio-mercado-tachado" style="font-size: 18px; color: var(--theme)">S/. {{ dtlprecio }}</p>
                             <!-- Nuevo bloque para mostrar el precio y porcentaje con descuento -->
+                          </ul>
+
+
+
+
+                          <div class="price-list-vertical" style="margin-top: 10px;">
+                            <div style="font-size: 18px; color: var(--theme); font-weight: bold" *ngIf="dtlprecioDesc_9">S/. {{ dtlprecioDesc_9 }} </div>
+                            <div style="color: white; background-color:var(--theme); font-size:90%" *ngIf="porcentajeDescuento_9">-{{ porcentajeDescuento_9 }}% Descuento</div>
+                            <div style="color: var(--theme); margin-top: 2px;font-size:90%">de 1 a 9 Unidades</div>
+
+                          </div>
+
+
+
+
+
+                          <ul>
+                            <p class="detalle-precio-distribuidor" style="font-size: 22px; font-weight: bold; margin-top: 20px !important">PRECIO DISTRIBUIDOR:</p>
 
                           </ul>
 
-                          <ul>
-                            <p class="detalle-precio-distribuidor" style="font-size: 22px;">PRECIO DISTRIBUIDOR:</p>
+                          <div class="price-list-vertical" style="margin-top: 10px;">
+                            <div style="color: var(--theme2); font-size: 18px; font-weight: bold" *ngIf="dtlprecioDesc">S/. {{ dtlprecioDesc }} </div>
+                            <div style="color: white; background-color:var(--theme2); font-size:90%" *ngIf="porcentajeDescuento">-{{ porcentajeDescuento }}% Descuento</div>
+                            <div style="color: blue; margin-top: 2px;font-size:90%">Mín 10 Unidades.</div>
 
+                          </div>
+
+                          <div class="price-list-vertical" style="margin-top: 10px;">
+                            <div style="color: var(--theme2); font-size: 18px; font-weight: bold" *ngIf="dtlprecioDesc_100">S/. {{ dtlprecioDesc_100 }} </div>
+                            <div style="color: white; background-color:var(--theme2); font-size:90%" *ngIf="porcentajeDescuento_100">-{{ porcentajeDescuento_100 }}% Descuento</div>
+                            <div style="color: blue; margin-top: 2px;font-size:90%">Mín 100 Unidades.</div>
+
+                          </div>
+
+                          <div class="price-list-vertical" style="margin-top: 10px; margin-bottom:20px">
+                            <div style="color: var(--theme2); font-size: 18px; font-weight: bold" *ngIf="dtlprecioDesc_1000">S/. {{ dtlprecioDesc_1000 }} </div>
+                            <div style="color: white; background-color:var(--theme2); font-size:90%" *ngIf="porcentajeDescuento_1000">-{{ porcentajeDescuento_1000 }}% Descuento</div>
+                            <div style="color: blue; margin-top: 2px;font-size:90%">Mín 1000 Unidades.</div>
+
+                          </div>
+
+
+
+                          <!-- <ul class="price-list">
+                            <li *ngIf="dtlprecioDesc">S/. {{ dtlprecioDesc }} </li>
+                            <li style="color: white; background-color:var(--theme2); font-size:65%" *ngIf="porcentajeDescuento"> -{{ porcentajeDescuento }}% Desc</li>
+                            <li style="color: blue; margin-top: 2px;font-size:90%">Mín 10 Unid.</li>
                           </ul>
 
                           <ul class="price-list">
-                            <li *ngIf="dtlprecioDesc" class="detalle-precio-distribuidor" style="font-size: 26px;" >S/. {{ dtlprecioDesc }} </li>
-                            <li style="color: white; background-color:var(--theme2); font-size:100%; margin-top: 10px" *ngIf="porcentajeDescuento"> {{ porcentajeDescuento }}% Descuento</li>
+                            <li *ngIf="dtlprecioDesc_100">S/. {{ dtlprecioDesc_100 }} </li>
+                            <li style="color: white; background-color:var(--theme2); font-size:65%" *ngIf="porcentajeDescuento_100"> -{{ porcentajeDescuento_100 }}% Desc</li>
+                            <li style="color: blue; margin-top: 2px;font-size:90%">Mín 100 Unid.</li>
                           </ul>
 
-                          <ul>
-                            <li style="color: blue; margin-top: 5px; font-size: 20px">Compra Mínimo 10 unidades</li>
-                          </ul>
+                          <ul class="price-list">
+                            <li *ngIf="dtlprecioDesc_1000">S/. {{ dtlprecioDesc_1000 }} </li>
+                            <li style="color: white; background-color:var(--theme2); font-size:65%" *ngIf="porcentajeDescuento_1000"> -{{ porcentajeDescuento_1000 }}% Desc</li>
+                            <li style="color: blue; margin-top: 2px;font-size:90%">Mín 1000 Unid.</li>
+                          </ul> -->
 
-                          <ul style="margin-top: 5px; font-size: 16px" class="detalle">
+                          <ul style="margin-top: 15px; font-size: 16px" class="detalle">
                             <li
                             [ngClass]="{'printdemand': dtlformato === 'P', 'no-printdemand': dtlformato === 'S'}">
                             {{ dttiponotificacion === 'A' ? 'Entrega: 10 días' : 'Título no disponible'
@@ -162,6 +209,10 @@
                             }}
                             </li>
                           </ul>
+
+
+
+                        </div>
                         <div class="cart-wrapper">
                             <div class="quantity-basket">
                                 <p class="qty">

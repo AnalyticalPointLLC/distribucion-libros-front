@@ -141,8 +141,21 @@ export class ListfilterComponent implements OnInit {
     if (producto.id) {
       this.lecturaService.getdiscountPriceMayorista(producto.id).subscribe({
         next: (res: any) => {
+          producto.precioOrig = res.precio_original;
+
           producto.precioDesc = res.precio_con_descuento;
           producto.percentajeDesc = res.percentaje_descuento;
+
+          producto.precioDesc_9 = res.precio_con_descuento_9;
+          producto.percentajeDesc_9 = res.percentaje_descuento_9;
+
+          producto.precioDesc_100 = res.precio_con_descuento_100;
+          producto.percentajeDesc_100 = res.percentaje_descuento_100;
+
+          producto.precioDesc_1000 = res.precio_con_descuento_1000;
+          producto.percentajeDesc_1000 = res.percentaje_descuento_1000;
+
+
           console.log(`Precio con descuento para ${producto.id}:`, res.precio_con_descuento);
         },
         error: (err) => {

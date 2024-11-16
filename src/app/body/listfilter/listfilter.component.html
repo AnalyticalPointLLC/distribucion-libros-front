@@ -168,7 +168,6 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="shop-content">
                                         <p class="detalle">Autor: {{item.autor}}</p>
                                         <h3 class="title-three-lines"><a href="shop-details.html">{{item.titulo}}</a>
                                         </h3>
@@ -180,29 +179,50 @@
                                         <p class="detalle">Promoción: {{item.promocion}}</p>
 
 
-                                        <p class="detalle-precio-mercado">PRECIO:</p>
+                                        <p class="detalle-precio-mercado" style="font-size: 12px; color: var(--theme); font-weight: bold">PRECIO NORMAL:</p>
+
+
+
+
 
 
 
                                         <ul>
-                                          <p class="detalle-precio-mercado-tachado">S/. {{ item.pvp }}</p>
+                                          <p class="detalle-precio-mercado-tachado" style="font-size: 12px; color: var(--theme)">S/. {{ item.precioOrig }}</p>
 
                                           <!-- Nuevo bloque para mostrar el precio y porcentaje con descuento -->
 
                                         </ul>
 
+                                        <ul class="price-list">
+                                          <li style="font-size: 12px; color: var(--theme)" *ngIf="item.precioDesc">S/. {{ item.precioDesc_9 }} </li>
+                                          <li style="color: white; background-color:var(--theme); font-size:65%" *ngIf="item.percentajeDesc"> -{{ item.percentajeDesc_9 }}% Desc</li>
+                                          <li style="color: var(--theme); margin-top: 2px;font-size:90%">de 1 a 9 Unid.</li>
+                                        </ul>
+
+
+
                                         <ul>
-                                          <p class="detalle-precio-distribuidor" >PRECIO DISTRIBUIDOR:</p>
+                                          <p class="detalle-precio-distribuidor" style="font-weight: bold" >PRECIO DISTRIBUIDOR:</p>
 
                                         </ul>
 
                                         <ul class="price-list">
                                           <li *ngIf="item.precioDesc">S/. {{ item.precioDesc }} </li>
-                                          <li style="color: white; background-color:var(--theme2); font-size:80%" *ngIf="item.percentajeDesc"> {{ item.percentajeDesc }}% Descuento</li>
+                                          <li style="color: white; background-color:var(--theme2); font-size:65%" *ngIf="item.percentajeDesc"> -{{ item.percentajeDesc }}% Desc</li>
+                                          <li style="color: blue; margin-top: 2px;font-size:90%">Mín 10 Unid.</li>
                                         </ul>
 
-                                        <ul>
-                                          <li style="color: blue; margin-top: 5px;">Compra Mínimo 10 unidades</li>
+                                        <ul class="price-list">
+                                          <li *ngIf="item.precioDesc">S/. {{ item.precioDesc_100 }} </li>
+                                          <li style="color: white; background-color:var(--theme2); font-size:65%" *ngIf="item.percentajeDesc"> -{{ item.percentajeDesc_100 }}% Desc</li>
+                                          <li style="color: blue; margin-top: 2px;font-size:90%">Mín 100 Unid.</li>
+                                        </ul>
+
+                                        <ul class="price-list">
+                                          <li *ngIf="item.precioDesc">S/. {{ item.precioDesc_1000 }} </li>
+                                          <li style="color: white; background-color:var(--theme2); font-size:65%" *ngIf="item.percentajeDesc"> -{{ item.percentajeDesc_1000 }}% Desc</li>
+                                          <li style="color: blue; margin-top: 2px;font-size:90%">Mín 1000 Unid.</li>
                                         </ul>
 
                                         <ul style="margin-top: 5px;" class="detalle">
@@ -228,7 +248,7 @@
                                             <a href="shop-details.html" class="theme-btn"><i
                                                     class="fa-solid fa-basket-shopping"></i> Agregar</a>
                                         </div>
-                                    </div>
+
                                 </div>
                             </div>
 
