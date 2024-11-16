@@ -176,10 +176,16 @@ export class HomeComponent implements OnInit {
     if (product.id) {
       this.lecturaService.getdiscountPriceMayorista(product.id).subscribe({
         next: (res: any) => {
+
           product.precioDesc = res.precio_con_descuento;
           product.percentajeDesc = res.percentaje_descuento;
+
+          product.precioDesc_9 = res.precio_con_descuento_9;
+          product.percentajeDesc_9 = res.percentaje_descuento_9;
+
           product.precioDesc_100 = res.precio_con_descuento_100;
           product.percentajeDesc_100 = res.percentaje_descuento_100;
+
           product.precioDesc_1000 = res.precio_con_descuento_1000;
           product.percentajeDesc_1000 = res.percentaje_descuento_1000;
           console.log(`Precio con descuento para ${product.id}:`, res.precio_con_descuento);
