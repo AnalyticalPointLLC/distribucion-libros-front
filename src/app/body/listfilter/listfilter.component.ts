@@ -246,6 +246,7 @@ export class ListfilterComponent implements OnInit {
       .subscribe({
         next: (dtl: any) => {
           this.lstProducto = dtl;
+          this.lstProducto.forEach((producto) => this.obtenerDescuento(producto));
         },
         error: () => {},
       });
@@ -264,6 +265,7 @@ export class ListfilterComponent implements OnInit {
           next: (dtl: any) => {
             this.txtsearchtitulo = nombre;
             this.lstProducto = dtl;
+            this.lstProducto.forEach((producto) => this.obtenerDescuento(producto));
           },
           error: () => {},
         });
