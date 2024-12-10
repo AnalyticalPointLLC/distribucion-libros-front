@@ -38,10 +38,10 @@
                 <div class="col-xl-3 col-lg-4 order-2 order-md-1 wow fadeInUp" data-wow-delay=".3s">
                     <div class="main-sidebar">
                         <div class="single-sidebar-widget">
-                            <div class="wid-title">
+                            <!-- <div class="wid-title">
                                 <h5>Búsqueda</h5>
-                            </div>
-                            <form action="#" class="search-toggle-box">
+                            </div> -->
+                            <!-- <form action="#" class="search-toggle-box">
                                 <div class="input-area search-container">
                                     <input class="search-input" type="text" [(ngModel)]="txtsearchtitulo"
                                         style="outline: black;color: black;">
@@ -49,7 +49,7 @@
                                         <i class="far fa-search"></i>
                                     </button>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                         <!--Idiomas-->
                         <div class="single-sidebar-widget">
@@ -86,7 +86,7 @@
 
                         </div>
                         <!--Clasificacion IBIC-->
-                        <div class="single-sidebar-widget" d-none d-lg-block>
+                        <!-- <div class="single-sidebar-widget" d-none d-lg-block>
                             <div class="wid-title" >
                                 <h5>Clasificación</h5>
                             </div>
@@ -98,23 +98,12 @@
                                             (click)="listadocategoria(categoria.codigo_ibic,categoria.nombre_clasificacion)">
                                             {{ categoria.nombre_clasificacion}}
                                         </button>
-                                        <!--
-                                        <button class="nav-link"
-                                            [ngClass]="{'active': dtltipo === categoria.codigo_ibic}"
-                                            id="pills-{{ categoria.codigo_ibic }}-tab" data-bs-toggle="pill"
-                                            [attr.data-bs-target]="'#pills-' + categoria.codigo_ibic" type="button"
-                                            role="tab" [attr.aria-controls]="'pills-' + categoria.codigo_ibic"
-                                            [attr.aria-selected]="dtltipo === categoria.codigo_ibic"
-                                            [routerLink]="['/listfilter', categoria.codigo_ibic,categoria.nombre_clasificacion,txtcatidioma]"
-                                            (click)="onCategoriaClick(categoria)">
-                                            {{ categoria.nombre_clasificacion }}
-                                        </button>
-                                        -->
+
                                     </li>
 
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
 
 
                     </div>
