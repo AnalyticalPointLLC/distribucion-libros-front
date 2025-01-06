@@ -18,7 +18,7 @@ interface Categoria {
   styleUrl: './listfilter.component.css',
 })
 export class ListfilterComponent implements OnInit {
-  itemsPerPage = 40; // Número de elementos por página
+  itemsPerPage = 100; // Número de elementos por página
   currentPage = 1;
 
   public dtltipo: string = '';
